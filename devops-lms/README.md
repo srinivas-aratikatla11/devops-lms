@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 DevOps Academy — LMS
 
 > This is your first real project. You will work on this codebase every single day of this course.
@@ -250,7 +249,3 @@ MIT — free to use and learn from.
 
 > You are not just a student using this LMS.
 > You are the engineer keeping it alive.
-=======
-# devops-lms
-Multi Cloud DevOps project for understanding DevOps in continuous stages of DevOps
->>>>>>> 184ceade3be2678627a0bb247fb1307dd4750792

@@ -1,0 +1,116 @@
+====================================================
+   DevOps Academy LMS — Create Admin Account
+====================================================
+
+Step 1: Make sure the server is stopped
+----------------------------------------
+If the server is running, go to the terminal and press:
+Ctrl + C
+
+
+Step 2: Create a new file called seed.js
+----------------------------------------
+Open your project in VS Code.
+Go to the root folder of the project — this is the same
+folder where you can see package.json and README.md.
+
+Create a new file here and name it exactly:
+seed.js
+
+
+Step 3: Copy and paste this code into seed.js and save it
+----------------------------------------------------------
+
+const mongoose = require('mongoose');
+const User = require('./backend/models/User');
+require('dotenv').config();
+
+const ADMIN = {
+  name:     'Admin',
+  email:    'admin@devopsacademy.com',
+  password: 'admin123',
+  role:     'admin',
+};
+
+async function seed() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('✅ Connected to MongoDB');
+
+    const existing = await User.findOne({ email: ADMIN.email });
+    if (existing) {
+      console.log('⚠️  Admin already exists. Skipping.');
+      process.exit(0);
+    }
+
+    await User.create(ADMIN);
+    console.log('🎉 Admin created!');
+    console.log('Email    :', ADMIN.email);
+    console.log('Password :', ADMIN.password);
+    process.exit(0);
+  } catch (err) {
+    console.error('❌ Failed:', err.message);
+    process.exit(1);
+  }
+}
+
+seed();
+
+Save the file using Ctrl + S
+
+
+Step 4: Run the seed file
+--------------------------
+Go to the terminal and type this and press Enter:
+
+node seed.js
+
+You should see this in the terminal:
+✅ Connected to MongoDB
+🎉 Admin created!
+Email    : admin@devopsacademy.com
+Password : admin123
+
+
+Step 5: Check MongoDB Atlas dashboard
+--------------------------------------
+1. Go to cloud.mongodb.com
+2. Click your cluster
+3. Click Browse Collections
+4. Click on devops-lms database
+5. Click on users collection
+6. You should see the admin account created there
+
+
+Step 6: Start the server again
+--------------------------------
+In the terminal type this and press Enter:
+
+npm run dev
+
+Now open your browser and go to:
+http://localhost:5000
+
+Login with:
+Email    : admin@devopsacademy.com
+Password : admin123
+
+
+====================================================
+IMPORTANT NOTES
+====================================================
+
+1. Run node seed.js only ONCE.
+   If you run it again it will say Admin already exists
+   and skip safely. Nothing will break.
+
+2. You do NOT need to run node seed.js every time.
+   The admin account is saved in MongoDB permanently.
+   Only npm run dev needs to be run every time.
+
+3. Students — before running seed.js, open the file
+   and change the email and password to your own:
+   email:    'your@email.com',
+   password: 'yourpassword',
+
+====================================================

@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  backend:
+    image: dlms:1.0
+    container_name: devops-lms-backend
+
+    env_file:
+      - .env
+
+    ports:
+      - "5000:5000"
+
+    networks:
+      - devops-lms-network
+
+networks:
+  devops-lms-network:
