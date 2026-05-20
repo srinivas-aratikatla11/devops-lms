@@ -35,16 +35,23 @@ app.get('*', (req, res) => {
 
 // ── Connect to MongoDB then start server ───────
 const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/devopslms';
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(MONGO_URI)
   .then(() => {
-    console.log('✅ Connected to MongoDB Atlas');
+    console.log('✅ Connected to MongoDB');
     app.listen(PORT, () => {
       console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
     console.error('❌ MongoDB connection failed:', err.message);
+    if (MONGO_URI.startsWith('mongodb+srv://')) {
+      console.error('   • If you are using Atlas, verify your IP is allowed and DNS/SRV lookups work.');
+      console.error('   • Confirm that the Atlas cluster is running and the connection string is correct.');
+    } else {
+      console.error('   • Ensure local MongoDB is running on mongodb://127.0.0.1:27017');
+    }
     process.exit(1);
   });
