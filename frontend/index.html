@@ -117,3 +117,171 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+<!-- MODERN LMS UI START -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f7fb;
+}
+
+.modern-dashboard{
+    margin-top:40px;
+    padding:20px;
+}
+
+.dashboard-title{
+    font-size:32px;
+    margin-bottom:30px;
+    color:#111827;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.dashboard-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+}
+
+.dashboard-card h3{
+    color:#6b7280;
+    margin-bottom:10px;
+}
+
+.dashboard-card h1{
+    font-size:35px;
+    color:#111827;
+}
+
+.course-section{
+    margin-top:50px;
+}
+
+.course-card{
+    width:350px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.course-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.course-content{
+    padding:20px;
+}
+
+.course-content h2{
+    margin-bottom:10px;
+}
+
+.course-info{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.progress-bar{
+    width:100%;
+    height:10px;
+    background:#e5e7eb;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.progress{
+    width:75%;
+    height:100%;
+    background:#6366f1;
+    border-radius:20px;
+}
+
+</style>
+
+<div class="modern-dashboard">
+
+    <h1 class="dashboard-title">
+        🚀 DevOps LMS Dashboard
+    </h1>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <h3>Total Courses</h3>
+            <h1>24</h1>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Total Students</h3>
+            <h1>1240</h1>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Assignments</h3>
+            <h1>87</h1>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Active Users</h3>
+            <h1>542</h1>
+        </div>
+
+    </div>
+
+    <div class="course-section">
+
+        <div class="course-card">
+
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            alt="course">
+
+            <div class="course-content">
+
+                <h2>DevOps Mastery</h2>
+
+                <p>
+                    AWS • Docker • Jenkins • Kubernetes
+                </p>
+
+                <div class="course-info">
+
+                    <span>⭐ 4.8</span>
+
+                    <span>👨‍🎓 12k Students</span>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODERN LMS UI END -->
