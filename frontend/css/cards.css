@@ -1,0 +1,51 @@
+.courses-section{
+    margin-top:40px;
+}
+
+.course-card{
+    width:350px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-8px);
+}
+
+.course-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.course-content{
+    padding:20px;
+}
+
+.course-content h3{
+    margin-bottom:10px;
+}
+
+.course-info{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.progress-bar{
+    width:100%;
+    height:10px;
+    background:#e5e7eb;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.progress{
+    width:70%;
+    height:100%;
+    background:#6366f1;
+    border-radius:20px;
+}
